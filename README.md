@@ -10,7 +10,7 @@ In this work, a system is designed and implemented in order to generate random b
 
 As mentioned before, the system contains 2 main sub-modules: PRBS and Pattern Detector. In this section, the architecture and idea of each block will be explained. The architecture of overall system is illustrated below.
 
-<div style="text-align: center;">
+<div align="center">
     <img src="Images/TOP.jpg" alt="Placeholder Image" style="display: block; margin: 0 auto;" width="450px"/>
     <p>System Architecture</p>
 </div>
@@ -31,7 +31,7 @@ As mentioned before, the system contains 2 main sub-modules: PRBS and Pattern De
 
 In this section, the way of how the system works and operates will be covered in detail. As seen in the figure below. The pattern which consists of 4 bytes sent byte by byte in each clock cycle and the process of sending this pattern lasts for 2 times depending on the n input. After receiving the pattern twice correctly the signal pattern_valid rises to one indicating that the pattern has received correctly without any corruption. 
 
-<div style="text-align: center;">
+<div align="center">
     <img src="Images/wave.PNG" alt="Placeholder Image" style="display: block; margin: 0 auto;" width="450px"/>
     <p>Case for rigth operation</p>
 </div>
@@ -39,7 +39,7 @@ In this section, the way of how the system works and operates will be covered in
 In case of receiving data other than the pattern, pattern_valid signal does not rise and stays to low, therefore, the only solution for this problem is to reset the overall system to work again correctly. This event is illustarted below.
 
 
-<div style="text-align: center;">
+<div align="center">
     <img src="Images/wave_2.PNG" alt="Placeholder Image" style="display: block; margin: 0 auto;" width="450px"/>
     <p>Case for wrong operation</p>
 </div>
@@ -48,7 +48,7 @@ In case of receiving data other than the pattern, pattern_valid signal does not 
 
 The architecture of PRBS is shown in the figure below.  
 
-<div style="text-align: center;">
+<div align="center">
     <img src="Images/PRBS.jpg" alt="Placeholder Image" style="display: block; margin: 0 auto;" width="450px"/>
     <p>PRBS architecture</p>
 </div>
@@ -65,7 +65,7 @@ The architecture of PRBS is shown in the figure below.
 
 The architecture of Pattern Detector is shown in the figure below.
 
-<div style="text-align: center;">
+<div align="center">
     <img src="Images/Pattern_detector.jpg" alt="Placeholder Image" style="display: block; margin: 0 auto;" width="450px"/>
     <p>Pattern Detector architecture</p>
 </div>
@@ -79,7 +79,7 @@ The architecture of Pattern Detector is shown in the figure below.
 
 The FSM state diagram is shown in the figure below.
 
-<div style="text-align: center;">
+<div align="center">
     <img src="Images/FSM.jpg" alt="Placeholder Image" style="display: block; margin: 0 auto;" width="450px"/>
     <p>FSM State Diagram</p>
 </div>
