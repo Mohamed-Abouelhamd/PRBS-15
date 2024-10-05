@@ -10,7 +10,7 @@ In this work, a system is designed and implemented in order to generate random b
 
 As mentioned before, the system contains 2 main sub-modules: PRBS and Pattern Detector. In this section, the architecture and idea of each block will be explained. The architecture of overall system is illustrated below.
 
-<img src="TOP.jpg" alt="Placeholder Image" style="display: block; margin: 0 auto;" />
+<img src="Images/TOP.jpg" alt="Placeholder Image" style="display: block; margin: 0 auto;" />
 <figcaption style="text-align: center;">System Architecture</figcaption>
 
 **Signal Description:**
@@ -29,19 +29,19 @@ As mentioned before, the system contains 2 main sub-modules: PRBS and Pattern De
 
 In this section, the way of how the system works and operates will be covered in detail. As seen in the figure below. The pattern which consists of 4 bytes sent byte by byte in each clock cycle and the process of sending this pattern lasts for 2 times depending on the n input. After receiving the pattern twice correctly the signal pattern_valid rises to one indicating that the pattern has received correctly without any corruption. 
 
-<img src="wave.PNG" alt="Placeholder Image" style="display: block; margin: 0 auto;" />
+<img src="Images/wave.PNG" alt="Placeholder Image" style="display: block; margin: 0 auto;" />
 <figcaption style="text-align: center;">Case for right operation</figcaption>
 
 In case of receiving data other than the pattern, pattern_valid signal does not rise and stays to low, therefore, the only solution for this problem is to reset the overall system to work again correctly. This event is illustarted below.
 
-<img src="wave_2.PNG" alt="Placeholder Image" style="display: block; margin: 0 auto;" />
+<img src="Images/wave_2.PNG" alt="Placeholder Image" style="display: block; margin: 0 auto;" />
 <figcaption style="text-align: center;">Case for wrong operation</figcaption>
 
 ### PRBS
 
 The architecture of PRBS is shown in the figure below.  
 
-<img src="PRBS.jpg" alt="Placeholder Image" style="display: block; margin: 0 auto;" />
+<img src="Images/PRBS.jpg" alt="Placeholder Image" style="display: block; margin: 0 auto;" />
 <figcaption style="text-align: center;">PRBS architecture</figcaption>
 
 - Byte Serializer: This block takes the 32-bit sequence and serializes them byte by byte depending on the number taken from the counter.
@@ -56,7 +56,7 @@ The architecture of PRBS is shown in the figure below.
 
 The architecture of Pattern Detector is shown in the figure below.
 
-<img src="Pattern_detector.jpg" alt="Placeholder Image" style="display: block; margin: 0 auto;" />
+<img src="Images/Pattern_detector.jpg" alt="Placeholder Image" style="display: block; margin: 0 auto;" />
 <figcaption style="text-align: center;">Pattern Detector architecture</figcaption>
 
 - Byte Comparator: This block compares each received byte by another byte from the input pattern based on the value of the Byte Counter and output a signal indicates if they are equal or not.
@@ -68,7 +68,7 @@ The architecture of Pattern Detector is shown in the figure below.
 
 The FSM state diagram is shown in the figure below.
 
-<img src="FSM.jpg" alt="Placeholder Image" style="display: block; margin: 0 auto;" />
+<img src="Images/FSM.jpg" alt="Placeholder Image" style="display: block; margin: 0 auto;" />
 <figcaption style="text-align: center;">FSM State Diagram</figcaption>
 
 The FSM has only four states. These states describe how the FSM works. Moreover, the FSM diagram does not has a closed loop but this is the behavior of the circuit.
